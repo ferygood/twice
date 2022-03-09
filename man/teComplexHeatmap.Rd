@@ -2,16 +2,22 @@
 % Please edit documentation in R/teComplexHeatmap.R
 \name{teComplexHeatmap}
 \alias{teComplexHeatmap}
-\title{Title}
+\title{Use ComplexHeatmap to visualize TEs data from TEKRABber result}
 \usage{
-teComplexHeatmap(df, teFilter = NULL, top = 40)
+teComplexHeatmap(df, teFilter = NULL, top = 40, filename = NULL)
 }
 \arguments{
-\item{top}{}
+\item{df}{a TEKRABber teDESeq2norm table}
+
+\item{teFilter}{a list of transposable elements subsets}
+
+\item{top}{a numeric value to show top number of genes in heatmap}
+
+\item{filename}{the name for saving pdf file (if specified)}
 }
 \value{
-
+a ComplexHeatmap heatmap (Formal class Heatmap)
 }
 \description{
-Title
+Use ComplexHeatmap to visualize TEs data from TEKRABber result
 }
