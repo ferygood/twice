@@ -2,4 +2,5 @@
 
 export(ensIDtoName)
 export(kznfsComplexHeatmap)
+export(saveTErmsk)
 export(teComplexHeatmap)
