@@ -7,7 +7,10 @@
 saveTErmsk(rmskGTF, fileName = FALSE)
 }
 \arguments{
-\item{fileName}{}
+\item{rmskGTF}{/path/filename of your transposable element rmsk gtf}
+
+\item{fileName}{provide file name if you want to save your result instead of
+just returning it.}
 }
 \value{
 a TE reference dataframe include gene_id, family_id and class_id
@@ -15,4 +18,8 @@ a TE reference dataframe include gene_id, family_id and class_id
 \description{
 to extract TE id/family/class information and to prepare data
 for visualize the abundance of TEs using pie chart (refer to pieTE())
+}
+\examples{
+
+
 }
