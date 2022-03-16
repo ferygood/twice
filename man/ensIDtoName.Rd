@@ -4,14 +4,31 @@
 \alias{ensIDtoName}
 \title{convert the ensID in row to gene name for heatmap visualization}
 \usage{
-ensIDtoName(df, species)
+ensIDtoName(df, species = "hsapiens")
 }
 \arguments{
-\item{species}{}
+\item{df}{a dataframe which has ensembl ID as row names}
+
+\item{species}{the scientific abbreviation name of a species, such as
+hsapiens for homo sapiens (human). The default is hsapiens.}
 }
 \value{
 a dataframe(matrix) with gene name in row names
 }
 \description{
-convert the ensID in row to gene name for heatmap visualization
+`ensIDtoName` convert ensembl ID to gene name for more human
+readibility. It takes a dataframe or matrix with ensembl gene ID as row
+names and then convert them to common gene name. The default species name is
+hsapiens. You can also specify the name of species you are interested in.
+There are some situation you will face duplicated row names after convert.
+Therefore, please consider first subset the data before conversion.
+}
+\examples{
+data(hmchimpGene)
+data(hmKZNFs337)
+dfKZNFs <-
+    hmchimpGene[rownames(hmchimpGene) \%in\% hmKZNFs337$ensembl_gene_id, ]
+df <- ensIDtoName(dfKZNFs, "hsapiens")
+
+
 }

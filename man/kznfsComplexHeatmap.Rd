@@ -4,7 +4,7 @@
 \alias{kznfsComplexHeatmap}
 \title{Use ComplexHeatmap to visualize KZNFs data from TEKRABber result}
 \usage{
-kznfsComplexHeatmap(df, top = 40, species = "hsapiens", filename = NULL)
+kznfsComplexHeatmap(df, top = 40, species = "hsapiens", fileName = NULL)
 }
 \arguments{
 \item{df}{a TEKRABber geneDESeq2norm table}
@@ -13,7 +13,7 @@ kznfsComplexHeatmap(df, top = 40, species = "hsapiens", filename = NULL)
 
 \item{species}{indicate the species name to convert ID}
 
-\item{filename}{the name for saving pdf file (if specified)}
+\item{fileName}{the name for saving pdf file (if specified)}
 }
 \value{
 a ComplexHeatmap heatmap (Formal class Heatmap)
@@ -22,7 +22,15 @@ a ComplexHeatmap heatmap (Formal class Heatmap)
 This function use ComplexHeatmap::Heatmap() to visualize KZNFs
 data generated from using TEKRABber. First it will load the built-in
 hmKZNFs337 and filter the dataframe. The dataframe is the file with
-extention geneDESeq2norm.csv from TEKRABber. You can specified how many of
+extension geneDESeq2norm.csv from TEKRABber. You can specified how many of
 the KZNFs you want to visualize. The default is showing the top 40 KZNFs
-with the highest row means among all samples.
+with the highest row means among all samples. If you face an error with
+could not find function "unit", you need to load the ComplexHeatmap library
+to your workspace.
+}
+\examples{
+data(hmchimpGene)
+kznfsComplexHeatmap(hmchimpGene, top=40, species="hsapiens")
+
+
 }
