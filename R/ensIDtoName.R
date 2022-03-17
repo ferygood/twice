@@ -21,9 +21,8 @@
 #'
 #'
 ensIDtoName <- function(df, species="hsapiens") {
+    #df$ensid <- rownames(df)
     ensIDList <- rownames(df)
-    mat_forHeatmap <- df
-
     geneName <- gprofiler2::gconvert(query = ensIDList,
                                      organism = species,
                                      target="ENSG",
@@ -31,7 +30,12 @@ ensIDtoName <- function(df, species="hsapiens") {
                                      filter_na = TRUE)
     # to avoid dulicated rownames, it is suggested to subset the data first
     # replace rownames
-    rownames(mat_forHeatmap) <- geneName$name
 
-    mat_forHeatmap
+    df$name <- geneName$name
+    df <- df[!duplicated(df$name), ]
+
+    rownames(df) <- df$name
+    df <- df[,-(length(df))]
+    df
+
 }

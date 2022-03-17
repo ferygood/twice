@@ -11,7 +11,10 @@
 #' @param top a numeric value to show top number of genes in heatmap
 #' @param species indicate the species name to convert ID
 #' @param fileName the name for saving pdf file (if specified)
+#' @param orderMean specify if you want to order the rows based on row means
 #'
+#' @importFrom grid gpar
+#' @importFrom circlize colorRamp2
 #' @return a ComplexHeatmap heatmap (Formal class Heatmap)
 #' @export
 #'
@@ -20,27 +23,40 @@
 #' kznfsComplexHeatmap(hmchimpGene, top=40, species="hsapiens")
 #'
 #'
-kznfsComplexHeatmap <- function(df, top=40, species = "hsapiens", fileName=NULL) {
+kznfsComplexHeatmap <- function(
+    df, top=40, species = "hsapiens", fileName=NULL, orderMean = FALSE) {
 
     # this is a prototype, parameters can be added later
     data(hmKZNFs337)
     df_KZNFs <- df[rownames(df) %in% hmKZNFs337$ensembl_gene_id, ]
 
-    if (top >= nrow(df_KZNFs)) {
-        df_KZNFs <- df_KZNFs[order(rowMeans(df_KZNFs), decreasing = TRUE), ]
-    } else if (is.numeric(top) & top > 0) {
-        df_KZNFs <- df_KZNFs[order(rowMeans(df_KZNFs), decreasing = TRUE), ]
-        df_KZNFs <- df_KZNFs[seq_len(top), ]
+    if (orderMean==TRUE){
+        if (top >= nrow(df_KZNFs)) {
+            df_KZNFs <- df_KZNFs[order(rowMeans(df_KZNFs), decreasing = TRUE), ]
+        } else if (is.numeric(top) & top > 0) {
+            df_KZNFs <- df_KZNFs[order(rowMeans(df_KZNFs), decreasing = TRUE), ]
+            df_KZNFs <- df_KZNFs[seq_len(top), ]
+        }
     }
 
     mat_df <- ensIDtoName(df_KZNFs, species)
 
+    # col_fun <- colorRamp2(
+    #     c(0, 4, 8),
+    #     c("#33FF99", "#0000FF", "#CC3300"))
+
     g <- ComplexHeatmap::Heatmap(
         mat_df,
         cluster_columns = FALSE,
-        name = "normalized",
+        cluster_rows = FALSE,
+        name = "Expr.",
         width = ncol(mat_df) * unit(4, "mm"),
-        height = nrow(mat_df) * unit(4, "mm")
+        height = nrow(mat_df) * unit(4, "mm"),
+        column_names_rot = 45,
+        row_names_gp = gpar(fontsize = 8),
+        column_names_gp = gpar(fontsize = 8),
+        rect_gp = gpar(col = "black", lwd = 0.8)
+        #col = col_fun
     )
 
     # save file in pdf format if fileName is specified

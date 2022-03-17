@@ -12,6 +12,8 @@
 #' @param top a numeric value to show top number of genes in heatmap
 #' @param fileName the name for saving pdf file (if specified)
 #'
+#' @importFrom matrixStats rowVars
+#' @importFrom tidyHeatmap save_pdf
 #' @return a ComplexHeatmap heatmap (Formal class Heatmap)
 #' @export
 #'
@@ -28,16 +30,22 @@ teComplexHeatmap <- function(df, teFilter=NULL, top=40, fileName=NULL) {
     }
 
     if (top >= nrow(df)) {
-        df <- df[order(rowMeans(df), decreasing = TRUE), ]
+        df <- df[order(rowVars(df), decreasing = TRUE), ]
     } else if (is.numeric(top) & top > 0) {
-        df <- df[order(rowMeans(df), decreasing = TRUE), ][seq_len(top), ]
+        df <- df[order(rowVars(df), decreasing = TRUE), ][seq_len(top), ]
     }
 
     g <- ComplexHeatmap::Heatmap(
         df,
-        name="normalized",
+        name="Expr.",
         width = ncol(df) * unit(4, "mm"),
-        height = nrow(df) * unit(4, "mm")
+        height = nrow(df) * unit(4, "mm"),
+        cluster_columns = FALSE,
+        column_names_rot = 45,
+        row_names_gp = gpar(fontsize = 8),
+        column_names_gp = gpar(fontsize = 8),
+        rect_gp = gpar(col = "black", lwd = 0.8)
+
     )
 
     if (!is.null(fileName)) {

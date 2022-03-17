@@ -4,7 +4,13 @@
 \alias{kznfsComplexHeatmap}
 \title{Use ComplexHeatmap to visualize KZNFs data from TEKRABber result}
 \usage{
-kznfsComplexHeatmap(df, top = 40, species = "hsapiens", fileName = NULL)
+kznfsComplexHeatmap(
+  df,
+  top = 40,
+  species = "hsapiens",
+  fileName = NULL,
+  orderMean = FALSE
+)
 }
 \arguments{
 \item{df}{a TEKRABber geneDESeq2norm table}
@@ -14,6 +20,8 @@ kznfsComplexHeatmap(df, top = 40, species = "hsapiens", fileName = NULL)
 \item{species}{indicate the species name to convert ID}
 
 \item{fileName}{the name for saving pdf file (if specified)}
+
+\item{orderMean}{specify if you want to order the rows based on row means}
 }
 \value{
 a ComplexHeatmap heatmap (Formal class Heatmap)

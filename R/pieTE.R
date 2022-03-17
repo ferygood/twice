@@ -11,6 +11,11 @@
 #' @param rmsk the rmsk reference. You can load the built-in one to use
 #' @param fileName the name of plot if you want to save it
 #'
+#' @importFrom ggrepel geom_label_repel
+#' @importFrom forcats fct_inorder
+#' @import ggplot2
+#' @importFrom magrittr %>%
+#' @importFrom dplyr mutate
 #' @return a ggplot pie chart object
 #' @export
 #'
@@ -22,6 +27,8 @@
 #' g <- pieTE(dfSelect, hg19rmsk_info)
 #'
 pieTE <- function(teExp, rmsk, fileName=NULL) {
+
+    `%!in%` <- Negate(`%in%`)
 
     df <- teExp
     df$mean <- rowMeans(teExp)
