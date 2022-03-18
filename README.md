@@ -11,3 +11,4 @@ TEKRABber using ![ComplexHeatmap package](https://jokergoo.github.io/ComplexHeat
 3. `teComplexHeatmap()`: similar to `kznfsComplexHeatmap()` but for transposable elements.
 4. `pieTE()`: visualize the abundance of transposable elements in class level using pie chart.
 5. `saveTErmsk()`: subset rmsk GTF file (class, family, gene) and save it to rda file.
+6. `rmskFilter()`: filter subfamily, subclass of repeatmasker annotation files for downstream analysis.
