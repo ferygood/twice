@@ -3,6 +3,7 @@
 export(ensIDtoName)
 export(kznfsComplexHeatmap)
 export(pieTE)
+export(rmskFilter)
 export(saveTErmsk)
 export(teComplexHeatmap)
 export(volGeneTE)
