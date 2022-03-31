@@ -7,13 +7,19 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
-)
-```
-
-```{r setup}
+In this vignette, I will explained how to use each functions with examples.
+```{r load library}
 library(twice)
 ```
+
+`ensIDtoName()` function can convert ensembl ID to common gene name. This function is useful when you want to obtain information more easily than reading ensembl ID.
+```{r ensIDtoName}
+# load data
+data(hmchimpGene)
+data(hmKZNFs337)
+# filter row names only include KZNFs
+dfKZNFs <- 
+    hmchimpGene[rownames(hmchimpGene) %in% hmKZNFs337$ensembl_gene_id, ]
+df <- ensIDtoName(dfKZNFs, "hsapiens")
+```
+
