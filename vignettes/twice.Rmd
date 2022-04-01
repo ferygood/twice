@@ -23,3 +23,7 @@ dfKZNFs <-
 df <- ensIDtoName(dfKZNFs, "hsapiens")
 ```
 
+`saveTErmsk()` extract gene/family/class information of transposable elements from repeatmasker annotation gtf file.
+```{r saveTErmsk}
+teAnnot <- saveTErmsk(rmskGTF, fileName=FALSE)
+```
