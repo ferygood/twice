@@ -6,7 +6,7 @@
 #' the name of transposable element, family_id for the class name, and class_id
 #' for the class name.
 #' @usage data(hg19rmsk_info)
-#' @example
+#' @examples
 #' data(hg19rmsk_info)
 "hg19rmsk_info"
 
@@ -16,7 +16,7 @@
 #' This is a gene expression dataframe including 3 replicates of human and
 #' chimpanzee. Row names are ensembl gene ID and column names are sample ID.
 #' @usage data(hmchimpGene)
-#' @example
+#' @examples
 #' data(hmchimpGene)
 "hmchimpGene"
 
@@ -26,7 +26,7 @@
 #' This is a TE expression dataframe including 3 replicates of human and
 #' chimpanzee. Row names are TE gene ID and column names are sample ID.
 #' @usage data(hmchimpTE)
-#' @example
+#' @examples
 #' data(hmchimpTE)
 "hmchimpTE"
 
@@ -36,6 +36,6 @@
 #' This is a 2 column dataframe including the ensembl gene ID and common gene
 #' name of 337 KRAB-Zinc-Finger gene in human.
 #' @usage data(hmKZNFs337)
-#' @example
+#' @examples
 #' data(hmKZNFs337)
 "hmKZNFs337"

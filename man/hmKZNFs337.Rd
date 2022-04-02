@@ -14,4 +14,7 @@ data(hmKZNFs337)
 This is a 2 column dataframe including the ensembl gene ID and common gene
 name of 337 KRAB-Zinc-Finger gene in human.
 }
+\examples{
+data(hmKZNFs337)
+}
 \keyword{datasets}

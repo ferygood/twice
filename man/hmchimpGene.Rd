@@ -14,4 +14,7 @@ data(hmchimpGene)
 This is a gene expression dataframe including 3 replicates of human and
 chimpanzee. Row names are ensembl gene ID and column names are sample ID.
 }
+\examples{
+data(hmchimpGene)
+}
 \keyword{datasets}

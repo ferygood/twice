@@ -16,4 +16,7 @@ elements in human (hg19). This dataframe object has 3 columns. gene_id for
 the name of transposable element, family_id for the class name, and class_id
 for the class name.
 }
+\examples{
+data(hg19rmsk_info)
+}
 \keyword{datasets}

@@ -19,7 +19,7 @@
 #'
 #' @examples
 #' data(hmchimpTE)
-#' teComplexHeatmap(hmchimpTE, top=40)
+#' #teComplexHeatmap(hmchimpTE, top=40)
 #'
 #'
 teComplexHeatmap <- function(df, teFilter=NULL, top=40, fileName=NULL) {

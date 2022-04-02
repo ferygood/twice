@@ -20,3 +20,12 @@ Suggests:
     knitr
 VignetteBuilder: knitr
 URL: https://ferygood.github.io/twice/
+Imports: 
+    forcats,
+    circlize,
+    dplyr,
+    tidyHeatmap,
+    ggplot2,
+    magrittr,
+    ggrepel,
+    matrixStats

@@ -20,7 +20,8 @@
 #' @export
 #'
 #' @examples
-#' df <- data(hg19rmsk_info)
+#' data(hg19rmsk_info)
+#' df <- hg19rmsk_info
 #'
 #' #list all possibilities
 #' rmskFilter(df, show=TRUE)

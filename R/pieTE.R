@@ -20,11 +20,11 @@
 #' @export
 #'
 #' @examples
-#' df <- read.csv("../kap1/hmchimp_results/teDESeq2Log2.csv")
-#' load('data/hg19rmsk_info.rda')
+#' #df <- read.csv("../kap1/hmchimp_results/teDESeq2Log2.csv")
+#' #load('data/hg19rmsk_info.rda')
 #'
-#' dfSelect <- df[,c(1,2,3)] #only select human columns
-#' g <- pieTE(dfSelect, hg19rmsk_info)
+#' #dfSelect <- df[,c(1,2,3)] #only select human columns
+#' #g <- pieTE(dfSelect, hg19rmsk_info)
 #'
 pieTE <- function(teExp, rmsk, fileName=NULL) {
 

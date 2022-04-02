@@ -30,7 +30,7 @@ ComplexHeatmap library to your workspace.
 }
 \examples{
 data(hmchimpTE)
-teComplexHeatmap(hmchimpTE, top=40)
+#teComplexHeatmap(hmchimpTE, top=40)
 
 
 }

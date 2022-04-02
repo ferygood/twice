@@ -33,7 +33,8 @@ including the name of family/class you want to select. The function will
 then return a subset of the rmsk dataframe.
 }
 \examples{
-df <- data(hg19rmsk_info)
+data(hg19rmsk_info)
+df <- hg19rmsk_info
 
 #list all possibilities
 rmskFilter(df, show=TRUE)
