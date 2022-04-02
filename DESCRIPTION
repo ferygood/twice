@@ -28,4 +28,5 @@ Imports:
     ggplot2,
     magrittr,
     ggrepel,
-    matrixStats
+    matrixStats,
+    gprofiler2

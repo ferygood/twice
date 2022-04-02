@@ -8,7 +8,7 @@
 #' @param df a dataframe which has ensembl ID as row names
 #' @param species the scientific abbreviation name of a species, such as
 #' hsapiens for homo sapiens (human). The default is hsapiens.
-#'
+#' @importFrom gprofiler2 gconvert
 #' @return a dataframe(matrix) with gene name in row names
 #' @export
 #'
