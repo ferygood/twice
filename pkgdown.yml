@@ -1,0 +1,10 @@
+pandoc: 2.7.3
+pkgdown: 2.0.2
+pkgdown_sha: ~
+articles:
+  twice: twice.html
+last_built: 2022-04-02T21:17Z
+urls:
+  reference: https://ferygood.github.io/twice/reference
+  article: https://ferygood.github.io/twice/articles
+
