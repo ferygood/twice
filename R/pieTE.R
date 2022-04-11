@@ -11,20 +11,22 @@
 #' @param rmsk the rmsk reference. You can load the built-in one to use
 #' @param fileName the name of plot if you want to save it
 #'
+#' @import ggplot2
 #' @importFrom ggrepel geom_label_repel
 #' @importFrom forcats fct_inorder
-#' @import ggplot2
 #' @importFrom magrittr %>%
 #' @importFrom dplyr mutate
+#' @importFrom dplyr lead
 #' @return a ggplot pie chart object
 #' @export
 #'
 #' @examples
-#' #df <- read.csv("../kap1/hmchimp_results/teDESeq2Log2.csv")
-#' #load('data/hg19rmsk_info.rda')
+#' data(hmchimpTE)
+#' data(hg19rmsk_info)
 #'
-#' #dfSelect <- df[,c(1,2,3)] #only select human columns
-#' #g <- pieTE(dfSelect, hg19rmsk_info)
+#' df <- hmchimpTE
+#' dfSelect <- df[,c(1,2,3)] #only select human columns
+#' g <- pieTE(dfSelect, hg19rmsk_info)
 #'
 pieTE <- function(teExp, rmsk, fileName=NULL) {
 

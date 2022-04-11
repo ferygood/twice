@@ -39,3 +39,23 @@
 #' @examples
 #' data(hmKZNFs337)
 "hmKZNFs337"
+
+#' Differentially expressed genes comparing human and chimpanzee
+#'
+#' @description
+#' This is a dataframe include log2 differentially expressed genes information
+#' comparing human and chimpanzee from TEKRABber analyzing results.
+#' @usage data(resHmChimpGene)
+#' @examples
+#' data(resHmChimpGene)
+"resHmChimpGene"
+
+#' Differentially expressed TEs comparing human and chimpanzee
+#'
+#' @description
+#' This is a dataframe include log2 differentially expressed TEs information
+#' comparing human and chimpanzee from TEKRABber analyzing results.
+#' @usage data(resHmChimpTE)
+#' @examples
+#' data(resHmChimpTE)
+"resHmChimpTE"

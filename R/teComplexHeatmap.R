@@ -19,7 +19,7 @@
 #'
 #' @examples
 #' data(hmchimpTE)
-#' #teComplexHeatmap(hmchimpTE, top=40)
+#' teComplexHeatmap(hmchimpTE, top=40)
 #'
 #'
 teComplexHeatmap <- function(df, teFilter=NULL, top=40, fileName=NULL) {
@@ -30,9 +30,10 @@ teComplexHeatmap <- function(df, teFilter=NULL, top=40, fileName=NULL) {
     }
 
     if (top >= nrow(df)) {
-        df <- df[order(rowVars(df), decreasing = TRUE), ]
+        df <- df[order(rowVars(as.matrix(df)), decreasing = TRUE), ]
     } else if (is.numeric(top) & top > 0) {
-        df <- df[order(rowVars(df), decreasing = TRUE), ][seq_len(top), ]
+        df <- df[order(rowVars(as.matrix(df)),
+                       decreasing = TRUE), ][seq_len(top), ]
     }
 
     g <- ComplexHeatmap::Heatmap(

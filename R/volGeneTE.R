@@ -1,13 +1,21 @@
-#' Title
+#' Gene and TEs volcano plot function
 #'
-#' @param resGene
-#' @param resTE
-#' @param fileName
+#' @description visualize the gene and TEs expression using volcano plots
+#' @param resGene res Gene expression data from TEKRABber
+#' @param resTE res TE expression data from TEKRABber
+#' @param fileName specify the file name if you want to save the figure
 #'
-#' @return
+#' @import EnhancedVolcano
+#' @import ggpubr
+#' @return ggplot object
 #' @export
 #'
 #' @examples
+#' data(resHmChimpGene)
+#' data(resHmChimpTE)
+#'
+#' volGeneTE(resHmChimpGene, resHmChimpTE)
+#'
 volGeneTE <- function(resGene, resTE, fileName=NULL) {
 
     #convert ensembl ID to gene name

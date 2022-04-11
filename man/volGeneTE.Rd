@@ -2,16 +2,27 @@
 % Please edit documentation in R/volGeneTE.R
 \name{volGeneTE}
 \alias{volGeneTE}
-\title{Title}
+\title{Gene and TEs volcano plot function}
 \usage{
 volGeneTE(resGene, resTE, fileName = NULL)
 }
 \arguments{
-\item{fileName}{}
+\item{resGene}{res Gene expression data from TEKRABber}
+
+\item{resTE}{res TE expression data from TEKRABber}
+
+\item{fileName}{specify the file name if you want to save the figure}
 }
 \value{
-
+ggplot object
 }
 \description{
-Title
+visualize the gene and TEs expression using volcano plots
+}
+\examples{
+data(resHmChimpGene)
+data(resHmChimpTE)
+
+volGeneTE(resHmChimpGene, resHmChimpTE)
+
 }
