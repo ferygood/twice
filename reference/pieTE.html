@@ -82,12 +82,15 @@ reference tables</p>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co">#df &lt;- read.csv("../kap1/hmchimp_results/teDESeq2Log2.csv")</span></span>
-<span class="r-in"><span class="co">#load('data/hg19rmsk_info.rda')</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">hmchimpTE</span><span class="op">)</span></span>
+<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">hg19rmsk_info</span><span class="op">)</span></span>
 <span class="r-in"></span>
-<span class="r-in"><span class="co">#dfSelect &lt;- df[,c(1,2,3)] #only select human columns</span></span>
-<span class="r-in"><span class="co">#g &lt;- pieTE(dfSelect, hg19rmsk_info)</span></span>
-<span class="r-in"></span>
+<span class="r-in"><span class="va">df</span> <span class="op">&lt;-</span> <span class="va">hmchimpTE</span></span>
+<span class="r-in"><span class="va">dfSelect</span> <span class="op">&lt;-</span> <span class="va">df</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span><span class="op">)</span><span class="op">]</span> <span class="co">#only select human columns</span></span>
+<span class="r-in"><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu">pieTE</span><span class="op">(</span><span class="va">dfSelect</span>, <span class="va">hg19rmsk_info</span><span class="op">)</span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in mutate(., csum = rev(cumsum(rev(mean))), pos = mean/2 + lead(csum,     1), pos = if_else(is.na(pos), mean/2, pos)):</span> Problem while computing `pos = if_else(is.na(pos), mean/2, pos)`.</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">Caused by error in `if_else()`:</span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span style="color: #BBBB00;">!</span> could not find function "if_else"</span>
 <span class="r-in"></span>
 </code></pre></div>
     </div>
