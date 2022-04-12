@@ -9,7 +9,8 @@ kznfsComplexHeatmap(
   top = 40,
   species = "hsapiens",
   fileName = NULL,
-  orderMean = FALSE
+  orderMean = FALSE,
+  speciesAnnot = FALSE
 )
 }
 \arguments{
@@ -22,6 +23,9 @@ kznfsComplexHeatmap(
 \item{fileName}{the name for saving pdf file (if specified)}
 
 \item{orderMean}{specify if you want to order the rows based on row means}
+
+\item{speciesAnnot}{a vector containing species information if you want to
+add top annotation on your heatmap}
 }
 \value{
 a ComplexHeatmap heatmap (Formal class Heatmap)
@@ -38,7 +42,9 @@ to your workspace.
 }
 \examples{
 data(hmchimpGene)
-kznfsComplexHeatmap(hmchimpGene, top=40, species="hsapiens")
+annot <- c("Hs", "Hs", "Hs", "Pt", "Pt", "Pt")
+kznfsComplexHeatmap(hmchimpGene, top=40, species="hsapiens",
+                    speciesAnnot=annot)
 
 
 }

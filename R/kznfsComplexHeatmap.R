@@ -12,6 +12,8 @@
 #' @param species indicate the species name to convert ID
 #' @param fileName the name for saving pdf file (if specified)
 #' @param orderMean specify if you want to order the rows based on row means
+#' @param speciesAnnot a vector containing species information if you want to
+#' add top annotation on your heatmap
 #'
 #' @importFrom grid gpar
 #' @importFrom circlize colorRamp2
@@ -20,11 +22,14 @@
 #'
 #' @examples
 #' data(hmchimpGene)
-#' kznfsComplexHeatmap(hmchimpGene, top=40, species="hsapiens")
+#' annot <- c("Hs", "Hs", "Hs", "Pt", "Pt", "Pt")
+#' kznfsComplexHeatmap(hmchimpGene, top=40, species="hsapiens",
+#'                     speciesAnnot=annot)
 #'
 #'
-kznfsComplexHeatmap <- function(
-    df, top=40, species = "hsapiens", fileName=NULL, orderMean = FALSE) {
+kznfsComplexHeatmap <- function(df, top=40, species = "hsapiens",
+                                fileName=NULL, orderMean = FALSE,
+                                speciesAnnot=FALSE) {
 
     # this is a prototype, parameters can be added later
     data(hmKZNFs337)
@@ -58,6 +63,10 @@ kznfsComplexHeatmap <- function(
         rect_gp = gpar(col = "black", lwd = 0.8)
         #col = col_fun
     )
+
+    if (!is.null(speciesAnnot)) {
+        g <- ComplexHeatmap::HeatmapAnnotation(species=speciesAnnot) %v% g
+    }
 
     # save file in pdf format if fileName is specified
     if (!is.null(fileName)) {

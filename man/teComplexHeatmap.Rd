@@ -4,7 +4,14 @@
 \alias{teComplexHeatmap}
 \title{Use ComplexHeatmap to visualize TEs data from TEKRABber result}
 \usage{
-teComplexHeatmap(df, teFilter = NULL, top = 40, fileName = NULL)
+teComplexHeatmap(
+  df,
+  teFilter = NULL,
+  top = 40,
+  fileName = NULL,
+  speciesAnnot = NULL,
+  teAnnot = NULL
+)
 }
 \arguments{
 \item{df}{a TEKRABber teDESeq2norm table}
@@ -30,7 +37,11 @@ ComplexHeatmap library to your workspace.
 }
 \examples{
 data(hmchimpTE)
-teComplexHeatmap(hmchimpTE, top=40)
+data(hg19rmsk_info)
+
+teComplexHeatmap(hmchimpTE, teFilter=hg19rmsk_info$gene_id[1:10],
+    speciesAnnot = c("h", "h", "h", "c", "c", "c"),
+    teAnnot = hg19rmsk_info[c(1:10), ])
 
 
 }

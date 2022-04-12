@@ -11,6 +11,10 @@
 #' @param teFilter a list of transposable elements subsets
 #' @param top a numeric value to show top number of genes in heatmap
 #' @param fileName the name for saving pdf file (if specified)
+#' @speciesAnnot a vector containing species information for top annotation on
+#' heatmap
+#' @teAnnot a vector containing class and family information for row annotation
+#' on heatmap
 #'
 #' @importFrom matrixStats rowVars
 #' @importFrom tidyHeatmap save_pdf
@@ -19,14 +23,19 @@
 #'
 #' @examples
 #' data(hmchimpTE)
-#' teComplexHeatmap(hmchimpTE, top=40)
+#' data(hg19rmsk_info)
+#'
+#' teComplexHeatmap(hmchimpTE, teFilter=hg19rmsk_info$gene_id[1:10],
+#'     speciesAnnot = c("h", "h", "h", "c", "c", "c"),
+#'     teAnnot = hg19rmsk_info[c(1:10), ])
 #'
 #'
-teComplexHeatmap <- function(df, teFilter=NULL, top=40, fileName=NULL) {
+teComplexHeatmap <- function(df, teFilter=NULL, top=40, fileName=NULL,
+                             speciesAnnot=NULL, teAnnot=NULL) {
 
     # this is a prototype, parameters can be added later
     if (!is.null(teFilter)) {
-        df <- df[rownames(df) %in% teFilter]
+        df <- df[rownames(df) %in% teFilter, ]
     }
 
     if (top >= nrow(df)) {
@@ -34,6 +43,20 @@ teComplexHeatmap <- function(df, teFilter=NULL, top=40, fileName=NULL) {
     } else if (is.numeric(top) & top > 0) {
         df <- df[order(rowVars(as.matrix(df)),
                        decreasing = TRUE), ][seq_len(top), ]
+    }
+
+    species_ha <- NULL
+    te_ha <- NULL
+
+    if(!is.null(speciesAnnot)) {
+        species_ha = ComplexHeatmap::HeatmapAnnotation(species=speciesAnnot)
+    }
+
+    if(!is.null(teAnnot)) {
+        te_ha = ComplexHeatmap::rowAnnotation(
+            family = teAnnot$family_id,
+            class = teAnnot$class_id
+        )
     }
 
     g <- ComplexHeatmap::Heatmap(
@@ -45,9 +68,12 @@ teComplexHeatmap <- function(df, teFilter=NULL, top=40, fileName=NULL) {
         column_names_rot = 45,
         row_names_gp = gpar(fontsize = 8),
         column_names_gp = gpar(fontsize = 8),
-        rect_gp = gpar(col = "black", lwd = 0.8)
+        rect_gp = gpar(col = "black", lwd = 0.8),
+        top_annotation = species_ha,
+        right_annotation = te_ha
 
     )
+
 
     if (!is.null(fileName)) {
 
