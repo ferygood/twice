@@ -29,7 +29,7 @@
 #'
 kznfsComplexHeatmap <- function(df, top=40, species = "hsapiens",
                                 fileName=NULL, orderMean = FALSE,
-                                speciesAnnot=FALSE) {
+                                speciesAnnot=NULL) {
 
     # this is a prototype, parameters can be added later
     data(hmKZNFs337)
@@ -50,6 +50,12 @@ kznfsComplexHeatmap <- function(df, top=40, species = "hsapiens",
     #     c(0, 4, 8),
     #     c("#33FF99", "#0000FF", "#CC3300"))
 
+    species_ha <- NULL
+
+    if(!is.null(speciesAnnot)) {
+        species_ha = ComplexHeatmap::HeatmapAnnotation(species=speciesAnnot)
+    }
+
     g <- ComplexHeatmap::Heatmap(
         mat_df,
         cluster_columns = FALSE,
@@ -60,13 +66,10 @@ kznfsComplexHeatmap <- function(df, top=40, species = "hsapiens",
         column_names_rot = 45,
         row_names_gp = gpar(fontsize = 8),
         column_names_gp = gpar(fontsize = 8),
-        rect_gp = gpar(col = "black", lwd = 0.8)
+        rect_gp = gpar(col = "black", lwd = 0.8),
+        top_annotation = species_ha
         #col = col_fun
     )
-
-    if (!is.null(speciesAnnot)) {
-        g <- ComplexHeatmap::HeatmapAnnotation(species=speciesAnnot) %v% g
-    }
 
     # save file in pdf format if fileName is specified
     if (!is.null(fileName)) {

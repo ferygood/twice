@@ -10,7 +10,7 @@ kznfsComplexHeatmap(
   species = "hsapiens",
   fileName = NULL,
   orderMean = FALSE,
-  speciesAnnot = FALSE
+  speciesAnnot = NULL
 )
 }
 \arguments{

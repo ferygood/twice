@@ -21,6 +21,12 @@ teComplexHeatmap(
 \item{top}{a numeric value to show top number of genes in heatmap}
 
 \item{fileName}{the name for saving pdf file (if specified)}
+
+\item{speciesAnnot}{a vector containing species information for top annotation on
+heatmap}
+
+\item{teAnnot}{a vector containing class and family information for row annotation
+on heatmap}
 }
 \value{
 a ComplexHeatmap heatmap (Formal class Heatmap)

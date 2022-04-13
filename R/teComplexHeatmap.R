@@ -11,9 +11,9 @@
 #' @param teFilter a list of transposable elements subsets
 #' @param top a numeric value to show top number of genes in heatmap
 #' @param fileName the name for saving pdf file (if specified)
-#' @speciesAnnot a vector containing species information for top annotation on
+#' @param speciesAnnot a vector containing species information for top annotation on
 #' heatmap
-#' @teAnnot a vector containing class and family information for row annotation
+#' @param teAnnot a vector containing class and family information for row annotation
 #' on heatmap
 #'
 #' @importFrom matrixStats rowVars
@@ -33,10 +33,11 @@
 teComplexHeatmap <- function(df, teFilter=NULL, top=40, fileName=NULL,
                              speciesAnnot=NULL, teAnnot=NULL) {
 
-    # this is a prototype, parameters can be added later
+    # Filter TEs by gene name if teFilter is specified
     if (!is.null(teFilter)) {
         df <- df[rownames(df) %in% teFilter, ]
     }
+
 
     if (top >= nrow(df)) {
         df <- df[order(rowVars(as.matrix(df)), decreasing = TRUE), ]
