@@ -66,7 +66,14 @@ ComplexHeatmap library to your workspace.</p>
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">teComplexHeatmap</span><span class="op">(</span><span class="va">df</span>, teFilter <span class="op">=</span> <span class="cn">NULL</span>, top <span class="op">=</span> <span class="fl">40</span>, fileName <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">teComplexHeatmap</span><span class="op">(</span>
+  <span class="va">df</span>,
+  teFilter <span class="op">=</span> <span class="cn">NULL</span>,
+  top <span class="op">=</span> <span class="fl">40</span>,
+  fileName <span class="op">=</span> <span class="cn">NULL</span>,
+  speciesAnnot <span class="op">=</span> <span class="cn">NULL</span>,
+  teAnnot <span class="op">=</span> <span class="cn">NULL</span>
+<span class="op">)</span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -79,6 +86,12 @@ ComplexHeatmap library to your workspace.</p>
 <dd><p>a numeric value to show top number of genes in heatmap</p></dd>
 <dt>fileName</dt>
 <dd><p>the name for saving pdf file (if specified)</p></dd>
+<dt>speciesAnnot</dt>
+<dd><p>a vector containing species information for top annotation on
+heatmap</p></dd>
+<dt>teAnnot</dt>
+<dd><p>a vector containing class and family information for row annotation
+on heatmap</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
@@ -88,9 +101,12 @@ ComplexHeatmap library to your workspace.</p>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">hmchimpTE</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu">teComplexHeatmap</span><span class="op">(</span><span class="va">hmchimpTE</span>, top<span class="op">=</span><span class="fl">40</span><span class="op">)</span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>The input is a data frame-like object, convert it to a matrix.</span>
-<span class="r-plt img"><img src="teComplexHeatmap-1.png" alt="" width="700" height="433"></span>
+<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">hg19rmsk_info</span><span class="op">)</span></span>
+<span class="r-in"></span>
+<span class="r-in"><span class="fu">teComplexHeatmap</span><span class="op">(</span><span class="va">hmchimpTE</span>, teFilter<span class="op">=</span><span class="va">hg19rmsk_info</span><span class="op">$</span><span class="va">gene_id</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">]</span>,</span>
+<span class="r-in">    speciesAnnot <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"h"</span>, <span class="st">"h"</span>, <span class="st">"h"</span>, <span class="st">"c"</span>, <span class="st">"c"</span>, <span class="st">"c"</span><span class="op">)</span>,</span>
+<span class="r-in">    teAnnot <span class="op">=</span> <span class="va">hg19rmsk_info</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span>, <span class="op">]</span><span class="op">)</span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in teComplexHeatmap(hmchimpTE, teFilter = hg19rmsk_info$gene_id[1:10],     speciesAnnot = c("h", "h", "h", "c", "c", "c"), teAnnot = hg19rmsk_info[c(1:10),         ]):</span> unused arguments (speciesAnnot = c("h", "h", "h", "c", "c", "c"), teAnnot = hg19rmsk_info[c(1:10), ])</span>
 <span class="r-in"></span>
 <span class="r-in"></span>
 </code></pre></div>
