@@ -1,9 +1,14 @@
 #' Integrate correlation pairs of KZNFs and TEs
 #'
-#' @param df
-#' @param rmsk
-#' @param title
-#' @param fileName
+#' @description This function takes the correlation result from TEKRABber and
+#' repeatmasker annotation to integrate a table include positive and negative
+#' correlation pairs of KRAB-ZNFs and TEs with their TE families and classes
+#' information. You can specify filename and title to save as html file or
+#' assign to a variable to get the csv file.
+#' @param df a correlation result dataframe from TEKRABber
+#' @param rmsk a transposable elements repeatmasker annotation
+#' @param title title when open html file
+#' @param fileName name for saving html files
 #'
 #' @import dplyr flextable
 #' @importFrom tidyr unnest
@@ -11,7 +16,15 @@
 #' @export
 #'
 #' @examples
+#' data(hmCorrResult)
+#' data(hg19rmsk_info)
 #'
+#' df <- kznfsTEsPairs(
+#'     hmCorrResult,
+#'     hg19rmsk_info,
+#'     title="human KZNFsTEsPairs",
+#'     fileName="hmKZNFsTEsPairs.html"
+#' )
 #'
 kznfsTEsPairs <- function(df, rmsk, title=NULL, fileName=NULL) {
 
@@ -48,7 +61,7 @@ kznfsTEsPairs <- function(df, rmsk, title=NULL, fileName=NULL) {
     colnames(df.negative) <- c("KRAB-ZNFs", "Family", "Class", "negative TEs")
 
     df.all <- full_join(
-        df1, df2,
+        df.positive, df.negative,
         by=c("KRAB-ZNFs" = "KRAB-ZNFs", "Family" = "Family", "Class"="Class")
     )
 
@@ -58,8 +71,8 @@ kznfsTEsPairs <- function(df, rmsk, title=NULL, fileName=NULL) {
 
     ft <- flextable(df.all)
     ft <- width(ft, width=2)
-    if (!is.null(title) && !is.null(fileNmae)) {
-        save_as_html(title=ft, path=fileName)
+    if (!is.null(title) && !is.null(fileName)) {
+        save_as_html(ft, title=title, path=fileName)
     }
 
     df.all

@@ -59,3 +59,14 @@
 #' @examples
 #' data(resHmChimpTE)
 "resHmChimpTE"
+
+#' Correlations result from TEKRABber
+#'
+#' @description
+#' This is a dataframe including the correlation between KZNFs and TEs pairs
+#' using TEKRABber.
+#' @usage data(hmCorrResult.rda)
+#' @examples
+#' data(hmCorrResult)
+"hmCorrResult"
+

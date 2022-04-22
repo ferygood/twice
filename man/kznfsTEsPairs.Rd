@@ -7,15 +7,33 @@
 kznfsTEsPairs(df, rmsk, title = NULL, fileName = NULL)
 }
 \arguments{
-\item{fileName}{}
+\item{df}{a correlation result dataframe from TEKRABber}
+
+\item{rmsk}{a transposable elements repeatmasker annotation}
+
+\item{title}{title when open html file}
+
+\item{fileName}{name for saving html files}
 }
 \value{
 a KZNFs TEs pairs table
 }
 \description{
-Integrate correlation pairs of KZNFs and TEs
+This function takes the correlation result from TEKRABber and
+repeatmasker annotation to integrate a table include positive and negative
+correlation pairs of KRAB-ZNFs and TEs with their TE families and classes
+information. You can specify filename and title to save as html file or
+assign to a variable to get the csv file.
 }
 \examples{
+data(hmCorrResult)
+data(hg19rmsk_info)
 
+df <- kznfsTEsPairs(
+    hmCorrResult,
+    hg19rmsk_info,
+    title="human KZNFsTEsPairs",
+    fileName="hmKZNFsTEsPairs.html"
+)
 
 }
