@@ -60,13 +60,23 @@
 #' data(resHmChimpTE)
 "resHmChimpTE"
 
-#' Correlations result from TEKRABber
+#' Human correlations result from TEKRABber
 #'
 #' @description
-#' This is a dataframe including the correlation between KZNFs and TEs pairs
-#' using TEKRABber.
+#' This is a dataframe including the human correlation between KZNFs and TEs
+#' pairsusing TEKRABber.
 #' @usage data(hmCorrResult.rda)
 #' @examples
 #' data(hmCorrResult)
 "hmCorrResult"
+
+#' Chimpanzee correlations result from TEKRABber
+#'
+#' @description
+#' This is a dataframe including the chimpanzee correlation between KZNFs and
+#' TEs pairs using TEKRABber.
+#' @usage data(chimpCorrResult.rda)
+#' @examples
+#' data(chimpCorrResult)
+"chimpCorrResult"
 

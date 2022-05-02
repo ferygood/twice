@@ -3,7 +3,7 @@
 \docType{data}
 \name{hmCorrResult}
 \alias{hmCorrResult}
-\title{Correlations result from TEKRABber}
+\title{Human correlations result from TEKRABber}
 \format{
 An object of class \code{data.frame} with 38400 rows and 5 columns.
 }
@@ -11,8 +11,8 @@ An object of class \code{data.frame} with 38400 rows and 5 columns.
 data(hmCorrResult.rda)
 }
 \description{
-This is a dataframe including the correlation between KZNFs and TEs pairs
-using TEKRABber.
+This is a dataframe including the human correlation between KZNFs and TEs
+pairsusing TEKRABber.
 }
 \examples{
 data(hmCorrResult)
