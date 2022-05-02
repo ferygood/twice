@@ -80,3 +80,11 @@
 #' data(chimpCorrResult)
 "chimpCorrResult"
 
+#' Information of human 423 KRAB-ZNFs gene
+#'
+#' @description
+#' This is a dataframe including 423 human KRAB-ZNFs genes witt coordinates
+#' @usage data(KZNFs423)
+#' @examples
+#' data(KZNFs423)
+"KZNFs423"
