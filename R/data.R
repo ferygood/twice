@@ -88,3 +88,14 @@
 #' @examples
 #' data(KZNFs423)
 "KZNFs423"
+
+#' hg38 information including age inference
+#'
+#' @description
+#' This is a dataframe including hg38 gene, transcript, branch (0-14), and
+#' geneName modified from GenTree data (http://gentree.ioz.ac.cn/index.php)
+#' @usage data(hg38age)
+#' @examples
+#' data(hg38age)
+"hg38age"
+

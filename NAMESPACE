@@ -2,6 +2,7 @@
 
 export(ensIDtoName)
 export(kznfsComplexHeatmap)
+export(kznfsTEsNetwork)
 export(kznfsTEsPairs)
 export(pieTE)
 export(rmskFilter)

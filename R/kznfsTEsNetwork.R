@@ -1,3 +1,18 @@
+#' Generate KRAB-ZNFs and TEs regulatory network
+#'
+#' @description Use CoDiNA to generate gene regulatory network to combine
+#' KRAB-ZNFs and TEs network between two species.
+#' @param ... add CorrResult Network dataframe from TEKRABber result
+#' @param code name of your network
+#'
+#' @return a list including DiffNet, Graph, network, znfName, teName
+#' @export
+#'
+#' @examples
+#' data(hmCorrResult)
+#' data(chimpCorrResult)
+#' kznfsTEsNetwork(hmCorrResult, chimpCorrResult, code=c("net1", "net2"))
+#'
 kznfsTEsNetwork <- function(..., code){
 
     dfList <- list()
@@ -46,8 +61,7 @@ kznfsTEsNetwork <- function(..., code){
         teName = teName
     )
 
+    output
+
 }
 
-Net4 <- kznfsTEsNetwork(chimpCorrResult, hmCorrResult, code=c("net1", "net2"))
-
-x <- Net4$network
