@@ -16,13 +16,31 @@
     <loc>https://ferygood.github.io/twice/index.html</loc>
   </url>
   <url>
+    <loc>https://ferygood.github.io/twice/reference/KZNFs423.html</loc>
+  </url>
+  <url>
+    <loc>https://ferygood.github.io/twice/reference/chimpCorrResult.html</loc>
+  </url>
+  <url>
     <loc>https://ferygood.github.io/twice/reference/ensIDtoName.html</loc>
+  </url>
+  <url>
+    <loc>https://ferygood.github.io/twice/reference/hg19rmsk_gtf.html</loc>
   </url>
   <url>
     <loc>https://ferygood.github.io/twice/reference/hg19rmsk_info.html</loc>
   </url>
   <url>
+    <loc>https://ferygood.github.io/twice/reference/hg38age.html</loc>
+  </url>
+  <url>
+    <loc>https://ferygood.github.io/twice/reference/hmCorrResult.html</loc>
+  </url>
+  <url>
     <loc>https://ferygood.github.io/twice/reference/hmKZNFs337.html</loc>
+  </url>
+  <url>
+    <loc>https://ferygood.github.io/twice/reference/hmKZNFsTEsPairs.html</loc>
   </url>
   <url>
     <loc>https://ferygood.github.io/twice/reference/hmchimpGene.html</loc>
@@ -35,6 +53,12 @@
   </url>
   <url>
     <loc>https://ferygood.github.io/twice/reference/kznfsComplexHeatmap.html</loc>
+  </url>
+  <url>
+    <loc>https://ferygood.github.io/twice/reference/kznfsTEsNetwork.html</loc>
+  </url>
+  <url>
+    <loc>https://ferygood.github.io/twice/reference/kznfsTEsPairs.html</loc>
   </url>
   <url>
     <loc>https://ferygood.github.io/twice/reference/pieTE.html</loc>
