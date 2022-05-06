@@ -99,3 +99,13 @@
 #' data(hg38age)
 "hg38age"
 
+#' Coordinates information of hg19 repeatmasker reference
+#'
+#' @description
+#' This repeatmasker annotation including the information of transposable
+#' elements and their chromosome number, start, end coordinate position. It
+#' can be used to calculated the distance between KRAB-ZNFs and TEs.
+#' @usage data(hg19rmsk_gtf)
+#' data(hg19rmsk_gtf)
+"hg19rmsk_gtf"
+
