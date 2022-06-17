@@ -92,12 +92,24 @@
 #' hg38 information including age inference
 #'
 #' @description
-#' This is a dataframe including hg38 gene, transcript, branch (0-14), and
-#' geneName modified from GenTree data (http://gentree.ioz.ac.cn/index.php)
+#' This is a dataframe including hg38 gene (Ensembl Ver95), transcript, branch
+#' (0-14), and geneName modified from GenTree data
+#' (http://gentree.ioz.ac.cn/index.php)
 #' @usage data(hg38age)
 #' @examples
 #' data(hg38age)
 "hg38age"
+
+#' hg19 information including age inference
+#'
+#' @description
+#' This is a dataframe including hg19 gene (Ensembl Ver73), transcript, branch
+#' (0-14), and geneName modified from GenTree data
+#' (http://gentree.ioz.ac.cn/index.php)
+#' @usage data(hg19age)
+#' @examples
+#' data(hg19age)
+"hg19age"
 
 #' Coordinates information of hg19 repeatmasker reference
 #'
