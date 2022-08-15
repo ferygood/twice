@@ -121,3 +121,14 @@
 #' data(hg19rmsk_gtf)
 "hg19rmsk_gtf"
 
+#' Positive selections of primates GRFs
+#'
+#' @description
+#' This dataframe is from (Positive Selection in Gene Regulatory Factors
+#' Suggests Adaptive Pleiotropic Changes During Human Evolution, Jovanovic,
+#' et al. 2021). The data include 27 primates with their gene name, gene ID,
+#' including transcription factors, co-factors and histone-modifying enzymes.
+#' @usage data(primateGRFs)
+"primateGRFs"
+
+#'

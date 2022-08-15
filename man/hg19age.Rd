@@ -5,7 +5,7 @@
 \alias{hg19age}
 \title{hg19 information including age inference}
 \format{
-An object of class \code{data.frame} with 19462 rows and 3 columns.
+An object of class \code{data.frame} with 19462 rows and 4 columns.
 }
 \usage{
 data(hg19age)
