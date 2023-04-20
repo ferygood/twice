@@ -94,7 +94,9 @@
 #' @description
 #' This is a dataframe including hg38 gene (Ensembl Ver95), transcript, branch
 #' (0-14), and geneName modified from GenTree data
-#' (http://gentree.ioz.ac.cn/index.php)
+#' (http://gentree.ioz.ac.cn/index.php). There is actual some missing data
+#' when you download them in a tsv file at once from GenTree. If you found NA,
+#' it is suggested to use the search tab to double-check on their website.
 #' @usage data(hg38age)
 #' @examples
 #' data(hg38age)
