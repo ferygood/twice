@@ -3,7 +3,7 @@ pkgdown: 2.0.3
 pkgdown_sha: ~
 articles:
   twice: twice.html
-last_built: 2023-04-24T09:57Z
+last_built: 2023-04-24T10:12Z
 urls:
   reference: https://ferygood.github.io/twice/reference
   article: https://ferygood.github.io/twice/articles
