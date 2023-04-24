@@ -2,7 +2,7 @@ Package: twice
 Type: Package
 Title: A collections of useful functions to analyze transcription factors and 
     transposable elements data
-Version: 0.1.0
+Version: 0.1.1
 Author: Yao-Chung Chen
 Maintainer: Yao-Chung Chen <yao-chung.chen@fu-berlin.de>
 Description: This package currently is for self-used. "T"ranscription Factors
