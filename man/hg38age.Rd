@@ -5,7 +5,7 @@
 \alias{hg38age}
 \title{hg38 information including age inference}
 \format{
-An object of class \code{data.frame} with 18757 rows and 4 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 18705 rows and 3 columns.
 }
 \usage{
 data(hg38age)
@@ -13,9 +13,7 @@ data(hg38age)
 \description{
 This is a dataframe including hg38 gene (Ensembl Ver95), transcript, branch
 (0-14), and geneName modified from GenTree data
-(http://gentree.ioz.ac.cn/index.php). There is actual some missing data
-when you download them in a tsv file at once from GenTree. If you found NA,
-it is suggested to use the search tab to double-check on their website.
+(http://gentree.ioz.ac.cn/index.php).
 }
 \examples{
 data(hg38age)
